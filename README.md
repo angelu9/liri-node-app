@@ -9,7 +9,7 @@ This app called liri, is a Language Interpretation and Recognization Interface. 
 3. Create a keys.js file inside of the cloned folder.
 4. Get Spotify keys from https://developer.spotify.com/my-applications/#!/ to use for the Spotify API and save them inside of the keys.js file.
 5. Open the liri.js file and run node through terminal.
-6. Use this coomands to make th app work:
+6. Use this commands to make th app work:
 
 node liri.js concert-this "artist/band name here",
 node liri.js spotify-this-song "song name here",
