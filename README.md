@@ -11,10 +11,10 @@ This app called liri, is a Language Interpretation and Recognization Interface. 
 5. Open the liri.js file and run node through terminal.
 6. Use this coomands to make th app work:
 
-node liri.js concert-this "artist/band name here"
-node liri.js spotify-this-song "song name here"
-node liri.js movie-this "movie name here"
-node liri.js do-what-it-says
+node liri.js concert-this "artist/band name here",
+node liri.js spotify-this-song "song name here",
+node liri.js movie-this "movie name here",
+node liri.js do-what-it-says,
 
 
 ### Prerequisites
@@ -42,7 +42,8 @@ Node.js
 
 * UCF Coding Bootcamp
 * YouTube
-* W3schools.com
+* W3schools.com 
+* Colleagues
 
 
 ## Images

@@ -9,7 +9,7 @@ var spotify = new Spotify(keys.spotify);
 
 
 
-var getArtist = function(artist) {
+  var getArtist = function(artist) {
     return artist.name;
   };
   
@@ -53,8 +53,8 @@ var getArtist = function(artist) {
     var movieUrl =
       "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=full&tomatoes=true&apikey=trilogy";
   
-    axios.get(movieUrl).then(
-      function(response) {
+    axios.get(movieUrl)
+    .then(function(response) {
         var jsonData = response.data;
   
         console.log("Title: " + jsonData.Title);
@@ -66,6 +66,7 @@ var getArtist = function(artist) {
         console.log("Plot: " + jsonData.Plot);
         console.log("Actors: " + jsonData.Actors);
         console.log("Rotten Tomatoes Rating: " + jsonData.Ratings[1].Value);
+
       }
     );
   };
@@ -75,8 +76,8 @@ var getArtist = function(artist) {
   var concertThis = function(artist) {
     var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
   
-    axios.get(queryURL).then(
-      function(response) {
+    axios.get(queryURL)
+    .then(function(response) {
         var jsonData = response.data;
   
         if (!jsonData.length) {
@@ -89,8 +90,7 @@ var getArtist = function(artist) {
         for (var i = 0; i < jsonData.length; i++) {
           var show = jsonData[i];
   
-          
-          console.log(
+            console.log(
             show.venue.city +
               "," +
               (show.venue.region || show.venue.country) +
@@ -122,31 +122,31 @@ var getArtist = function(artist) {
 
   
   
-  var pick = function(caseData, functionData) {
-    switch (caseData) {
+  var pick = function(operation, dataSearch) {
+    switch (operation) {
     
     case "spotify-this-song":
-      spotifyThis(functionData);
+      spotifyThis(dataSearch);
       break;
     case "movie-this":
-      movieThis(functionData);
+      movieThis(dataSearch);
       break;
     case "concert-this":
-      concertThis(functionData);
+      concertThis(dataSearch);
       break;
     case "do-what-it-says":
       doThis();
       break;
     default:
-      console.log("Error, try again");
+      console.log("Error, try again!");
     }
   };
-  
-  
- 
+
+
   var startThis = function(firstArgument, secondArgument) {
     pick(firstArgument, secondArgument);
   };
+  
   
   
   startThis(process.argv[2], process.argv.slice(3).join(" "));
